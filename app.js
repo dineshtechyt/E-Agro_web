@@ -6,19 +6,17 @@ import dotenv from "dotenv";
 import { prouter } from "./routes/productRoutes.js";
 import { crouter } from "./routes/categoryRoutes.js";
 import { fileURLToPath } from "url";
-const app = express();
-
 import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+const app = express();
 dbConnect();
 
 dotenv.config();
 const port = process.env.PORT || 8000;
-app.use(cors());
 // app.use(express.urlencoded());
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/v1/user", arouter);
 app.use("/api/v1/product", prouter);

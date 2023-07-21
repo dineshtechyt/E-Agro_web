@@ -17,6 +17,8 @@ var gateway = new braintree.BraintreeGateway({
 export const createProductController = async (req, res) => {
   try {
     const { name, description, category, price, quantity } = req.fields;
+    console.log(name, description, category, price, quantity)
+
     const { photo } = req.files;
 
     const productData = await new productModel({
