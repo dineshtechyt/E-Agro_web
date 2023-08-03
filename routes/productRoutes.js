@@ -34,9 +34,8 @@ prouter.put(
   updateProductController
 );
 prouter.get("/getallproducts", getAllProductController);
-prouter.get(
+prouter.get(  
   "/getsingleproduct/:slug",
-  requireSignIn,
   getSingleProductController
 );
 prouter.delete(
