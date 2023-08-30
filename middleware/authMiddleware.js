@@ -25,7 +25,7 @@ export const isAdmin = async (req, res, next) => {
     const id = req.user._id;
     const cUser = await userModel.findById(id);
     // console.log(cUser);
-    if (cUser.role === true) {
+    if (cUser.role === false) {
     return  res.status(500).send({
         success: false,
         message: "sorry you are not admin",
